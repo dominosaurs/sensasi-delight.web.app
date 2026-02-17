@@ -151,7 +151,6 @@ const SkillCanvas = ({ skills }: { skills: Skill[] }) => {
     return (
         <>
             <canvas
-                data-lenis-prevent
                 id="skills-tagcanvas"
                 width={400}
                 height={400}

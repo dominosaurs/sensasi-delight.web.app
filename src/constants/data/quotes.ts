@@ -8,8 +8,24 @@ const quotes = [
         author: 'D.B. Coulson',
     },
     {
-        quote: 'Yippee Ki-Yay, Mr. Falcon.',
-        author: 'John McClane from Die Hard 2 (1990)[TV Version]',
+        quote: 'The important thing is not to stop questioning. Curiosity has its own reason for existing.',
+        author: 'Albert Einstein',
+    },
+    {
+        quote: 'Everything that we do is insignificant...and...it is very important that we do it.',
+        author: 'Mahatma Gandhi',
+    },
+    {
+        quote: 'Imagination is more important than knowledge.',
+        author: 'Albert Einstein',
+    },
+    {
+        quote: 'The trouble is you think you have time.',
+        author: 'Budha',
+    },
+    {
+        quote: 'Love the life you live. Live the life you love.',
+        author: 'Bob Marley',
     },
 ]
 
