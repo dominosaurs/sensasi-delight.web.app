@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+allow: /
+sitemap: https://zain-adam.web.app/sitemap.xml

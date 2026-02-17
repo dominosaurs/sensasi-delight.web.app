@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import { Roboto } from 'next/font/google'
 // sub
 import type Params from './@types/params'
+import type { Locale } from './@types/locale'
 import ThemeProvider from './@layout/theme-provider'
 import PageLayout from './@layout/page-layout'
 import InitFirebase from './init-firebase'
@@ -36,27 +37,51 @@ export default async function RootLayout({
     params: Promise<Params>
 }) {
     const { lang = ['en'] } = await params
+    const locale = lang[0] as Locale
+
+    const personJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Adam Zain Akbar',
+        url: 'https://zain-adam.web.app',
+        jobTitle: 'Web Developer',
+        description:
+            'Adam Zain Akbar is a full time learner, mostly a web developer.',
+        sameAs: [
+            'https://github.com/dominosaurs',
+            'https://www.linkedin.com/in/-zain-adam/',
+            'https://scholar.google.com/citations?user=N9MoW0EAAAAJ',
+        ],
+    }
+
+    const websiteJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Adam Zain Akbar Portfolio',
+        url: 'https://zain-adam.web.app',
+        publisher: {
+            '@type': 'Person',
+            name: 'Adam Zain Akbar',
+        },
+    }
 
     return (
-        <html lang={lang[0]}>
+        <html lang={locale}>
             <head>
-                <meta name="author" content="Adam Zain Akbar" />
-                <meta name="robots" content="index, follow" />
-
-                <meta
-                    name="google"
-                    content="nositelinkssearchbox"
-                    key="sitelinks"
+                <script
+                    type="application/ld+json"
+                    // biome-ignore lint/security/noDangerouslySetInnerHtml: needed
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(personJsonLd),
+                    }}
                 />
-                <meta name="google" content="notranslate" key="notranslate" />
-
-                <meta
-                    name="apple-mobile-web-app-title"
-                    content="sensasi-delight"
+                <script
+                    type="application/ld+json"
+                    // biome-ignore lint/security/noDangerouslySetInnerHtml: needed
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(websiteJsonLd),
+                    }}
                 />
-
-                {/* <!-- Canonical URL --> */}
-                <link rel="canonical" href="https://sensasi-delight.web.app" />
             </head>
             <body className={roboto.variable}>
                 <InitFirebase />
