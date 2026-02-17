@@ -1,0 +1,21 @@
+{
+    "name": "Adam Zain Akbar — Web Developer",
+    "short_name": "Adam Zain",
+    "description": "Portfolio of Adam Zain Akbar, full time learner, mostly a web developer.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#333333",
+    "theme_color": "#333333",
+    "icons": [
+        {
+            "src": "/web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

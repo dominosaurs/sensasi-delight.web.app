@@ -41,14 +41,14 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                 gap={1.5}
                 display="flex"
                 flexDirection="column">
-                <Typography variant="h5" component="p">
+                <Typography variant="h5" component="h1">
                     Adam <CodeTag>Zain</CodeTag> Akbar
                 </Typography>
 
                 <Typography
                     variant="h2"
                     fontWeight="bold"
-                    component="p"
+                    component="h2"
                     lineHeight={0.9}>
                     {DICTIONARIES.roleTitle1[locale]}
                 </Typography>
