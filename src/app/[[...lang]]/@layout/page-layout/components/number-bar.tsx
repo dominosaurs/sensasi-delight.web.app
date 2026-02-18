@@ -47,7 +47,7 @@ export default function NumberBar() {
                 //     height: 'calc(1.5em + 8px)',
                 // },
             }}>
-            <RenderRowNumber rowNumber={94} />
+            <RenderRowNumber rowNumber={78} />
         </Box>
     )
 }
